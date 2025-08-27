@@ -35,6 +35,3 @@ depth = int(input("Input the recursion depth of the shape: "))
 
 # Draws the shape in Turtle
 draw_shape(sides, length, depth)
-
-
-
