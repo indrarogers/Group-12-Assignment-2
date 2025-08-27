@@ -6,13 +6,14 @@ def shape_edge(t, length, depth):
         t.forward(length)
     else:
         length /= 3.0
-        shape_edge(t, length, depth - 1)
+        depth = depth - 1
+        shape_edge(t, length, depth)
         t.right(60)
-        shape_edge(t, length, depth - 1)
+        shape_edge(t, length, depth)
         t.left(120)
-        shape_edge(t, length, depth - 1)
+        shape_edge(t, length, depth)
         t.right(60)
-        shape_edge(t, length, depth - 1)
+        shape_edge(t, length, depth)
 
 # Function for drawing the shape using Turtle
 def draw_shape(sides, length, depth):
@@ -34,4 +35,5 @@ depth = int(input("Input the recursion depth of the shape: "))
 
 # Draws the shape in Turtle
 draw_shape(sides, length, depth)
+
 
