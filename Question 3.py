@@ -20,7 +20,7 @@ def draw_shape(sides, length, depth):
     angle = 360 / sides
     turtle.speed(0)
     turtle.penup()
-    turtle.setposition(0, 0)
+    turtle.setposition(-length/2, length/2)
     turtle.pendown()
     for _ in range(sides):
         shape_edge(turtle, length, depth)
@@ -35,5 +35,6 @@ depth = int(input("Input the recursion depth of the shape: "))
 
 # Draws the shape in Turtle
 draw_shape(sides, length, depth)
+
 
 
