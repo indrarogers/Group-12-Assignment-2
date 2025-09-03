@@ -1,4 +1,7 @@
 import turtle
+t = turtle.Turtle()
+screen = turtle.Screen()
+screen.bgcolor("white")
 
 # Function for modifying the shape's edges
 def shape_edge(t, length, depth):
@@ -18,14 +21,14 @@ def shape_edge(t, length, depth):
 # Function for drawing the shape using Turtle
 def draw_shape(sides, length, depth):
     angle = 360 / sides
-    turtle.speed(0)
-    turtle.penup()
-    turtle.setposition(-length/2, length/2)
-    turtle.pendown()
+    t.speed(0)
+    t.penup()
+    t.setposition(-length/2, length/2)
+    t.pendown()
     for _ in range(sides):
-        shape_edge(turtle, length, depth)
-        turtle.right(angle)
-    turtle.hideturtle()
+        shape_edge(t, length, depth)
+        t.right(angle)
+    t.hideturtle()
     turtle.done()
 
 # Customizes the shape sides, length, and recursion depth
@@ -35,3 +38,4 @@ depth = int(input("Input the recursion depth of the shape: "))
 
 # Draws the shape in Turtle
 draw_shape(sides, length, depth)
+
