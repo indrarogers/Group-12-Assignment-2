@@ -1,5 +1,7 @@
 # Tristan Storey Temperatures 
 
+# Note if running add code to same folder as folder containing all tempareture readings 
+
 # Imports (os for giving access to the temperature files) (pandas as pd to allow to read the files) 
 import os
 import pandas as pd
