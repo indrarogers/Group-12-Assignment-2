@@ -1,4 +1,4 @@
-#Indra Rogers Decryption.
+#Indra Rogers Encryption/Decryption.
 
 import string
 
