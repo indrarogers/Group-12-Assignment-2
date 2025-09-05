@@ -1,9 +1,7 @@
 import string
 
-# ---------------- Encryption / Decryption helpers ----------------
 def shift_char(c, shift, direction="forward", alphabet=None):
-    """Shift character c within the given alphabet (defaults to full A–Z/a–z).
-       If a custom alphabet is provided, wrap within that alphabet only."""
+    """Shift character c within the given alphabet"""
     if alphabet is None:
         if c.islower():
             alphabet = string.ascii_lowercase
@@ -13,7 +11,7 @@ def shift_char(c, shift, direction="forward", alphabet=None):
             return c  # non-letters unchanged
 
     if c not in alphabet:
-        return c  # safety: ignore if not present
+        return c  #ignores all that don't meet criteria
 
     L = len(alphabet)
     idx = alphabet.index(c)
@@ -29,6 +27,7 @@ LOWER_SECOND = string.ascii_lowercase[13:]   # 'n'..'z'
 UPPER_FIRST  = string.ascii_uppercase[:13]   # 'A'..'M'
 UPPER_SECOND = string.ascii_uppercase[13:]   # 'N'..'Z'
 
+#Encryption 
 
 def encrypt(text, shift1, shift2):
     encrypted = []
@@ -51,6 +50,7 @@ def encrypt(text, shift1, shift2):
             encrypted.append(c)  # unchanged
     return "".join(encrypted)
 
+#Decryption
 
 def decrypt(text, shift1, shift2):
     decrypted = []
@@ -73,7 +73,7 @@ def decrypt(text, shift1, shift2):
             decrypted.append(c)  # unchanged
     return "".join(decrypted)
 
-# ---------------- File functions ----------------
+#File functions
 def encrypt_file(shift1, shift2):
     with open("raw_text.txt", "r", encoding="utf-8") as infile:
         raw = infile.read()
@@ -98,7 +98,7 @@ def verify():
         else:
             print("❌ Decryption failed: Files do not match.")
 
-# ---------------- Main program ----------------
+#User interface
 if __name__ == "__main__":
     shift1 = int(input("Enter shift1: "))
     shift2 = int(input("Enter shift2: "))
