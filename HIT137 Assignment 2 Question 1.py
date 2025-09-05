@@ -94,7 +94,7 @@ def verify():
     with open("raw_text.txt", "r", encoding="utf-8") as f1, \
          open("decrypted_text.txt", "r", encoding="utf-8") as f2:
         if f1.read() == f2.read():
-            print("✅ Decryption successful: Original and decrypted match!")
+            print("✅ Decryption successful: Original and decrypted match.")
         else:
             print("❌ Decryption failed: Files do not match.")
 
