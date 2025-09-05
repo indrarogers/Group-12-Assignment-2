@@ -1,3 +1,5 @@
+#Indra Rogers Decryption.
+
 import string
 
 def shift_char(c, shift, direction="forward", alphabet=None):
